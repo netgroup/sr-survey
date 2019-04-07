@@ -1,0 +1,179 @@
+\section{Standardization activities}
+\label{sec:standard}
+\begin{comment}
+
+\begin{itemize}
+    \item Describe all the standardization activities
+    \item A first list can be found here http://www.segment-routing.net/ietf/ 
+    \item Complete the section with the new drafts not listed above
+\end{itemize}
+\end{comment}
+In this section we propose a classification and description of the standardization activity related to Segment Routing. The number of standardization documents related to Segment Routing is high, thus we decided to focus on a subset of them: more in detail, we report here 9 Request For Comment (RFC) and 50 Internet Drafts.
+
+\begin{table}[]
+\caption{\\Classification of the Standardization Activities documents}
+\label{tab:standardization}
+\begin{tabular}{|l|c|l|l|}
+\hline
+\multicolumn{3}{|l|}{\textbf{Architecture}}                                                                & \cite{rfc8402,id-segment-routing-policy,id-sr-policy-considerations,id-sr-policy-yang,id-segment-routing-mpls,id-srv6-network-prog,id-sr-service-programming} \\ \hline
+\multicolumn{3}{|l|}{\textbf{Use-case and Requirements}}                                                   & \cite{rfc7855,rfc8355,rfc8354,id-segment-routing-msdc,id-segment-routing-central-epe,id-spring-large-scale-interconnect,id-sr-for-sdwan,id-srv6-mobile-uplane,id-srv6-mobile-pocs,id-network-slicing-building-blocks,id-sr-traffic-counters,id-spring-poi-sr} \\ \hline
+\multicolumn{3}{|l|}{\textbf{Fast Reroute (FRR)}}                                                          & \cite{id-segment-routing-ti-lfa,id-segment-routing-uloop,id-microloop-avoidance} \\ \hline
+\multicolumn{3}{|l|}{\textbf{OAM}}                                                                         & \cite{id-spring-oam-usecase,rfc8287,id-srv6-oam,id-sr-traffic-accounting,id-bfd-sr-policy} \\ \hline
+\multicolumn{3}{|l|}{\textbf{Performance Measurement}}                                                     & \cite{rfc6374,rfc7876,id-sr-mpls-pm,id-udp-pm} \\ \hline
+\multirow{8}{*}{\textbf{Protocol Extensions}} & \multirow{2}{*}{\textbf{Data Plane}}    & \textit{SR-MPLS} & \cite{ietf-spring-segment-routing-ldp-interop-13,filsfils-spring-segment-routing-ldp-interop-03,ietf-spring-mpls-anycast-segments-02,psarkar-spring-mpls-anycast-segments-02,filsfils-spring-sr-recursing-info-05,ietf-teas-sr-rsvp-coexistence-rec-04,sitaraman-sr-rsvp-coexistence-rec-02,xu-mpls-sr-over-ip-01,bryant-mpls-unified-ip-sr-03,xu-mpls-unified-source-routing-instruction-04} \\ \cline{3-4} 
+                                              &                                         & \textit{SRv6}    & \cite{draft-srh,voyer-6man-extension-header-insertion-04,raza-spring-srv6-yang-01} \\ \cline{2-4} 
+                                              & \multirow{6}{*}{\textbf{Control Plane}} & \textit{BGP}     & \cite{ietf-idr-bgp-prefix-sid-27,keyupate-idr-bgp-prefix-sid-05,ietf-idr-segment-routing-te-policy-04,previdi-idr-segment-routing-te-policy-07,sreekantiah-idr-segment-routing-te-00,dawra-idr-bgp-sr-service-chaining-02,dawra-spring-bgp-sr-service-chaining-00,dawra-idr-srv6-vpn-04,dawra-bgp-srv6-vpn-00} \\ \cline{3-4} 
+                                              &                                         & \textit{BGP-LS}  & \cite{ietf-idr-bgp-ls-segment-routing-ext-08,gredler-idr-bgp-ls-segment-routing-ext-04,ietf-idr-te-lsp-distribution-09,ietf-idr-bgpls-segment-routing-epe-15,previdi-idr-bgpls-segment-routing-epe-03,ietf-idr-bgp-ls-segment-routing-msd-01,tantsura-idr-bgp-ls-segment-routing-msd-05,ietf-idr-te-pm-bgp-10,dawra-idr-bgpls-srv6-ext-03,ketant-idr-bgp-ls-bgp-only-fabric-00} \\ \cline{3-4} 
+                                              &                                         & \textit{IS-IS}   & \cite{ietf-isis-segment-routing-extensions,previdi-isis-segment-routing-extensions-05,bashandy-isis-srv6-extensions,previdi-isis-ipv6-prefix-sid-03,hegdeppsenak-isis-sr-flex-algo-02,ietf-lsr-flex-algo-00,ietf-isis-segment-routing-msd-12,tantsura-isis-segment-routing-msd-02,ietf-isis-l2bundles-07,ginsberg-isis-l2bundles-02,rfc7810} \\ \cline{3-4} 
+                                              &                                         & \textit{OSPF}    & 
+                                              \begin{tabular}[c]{@{}l@{}}\cite{ietf-ospf-segment-routing-extensions,psenak-ospf-segment-routing-extensions-05,ietf-ospf-ospfv3-segment-routing-extensions,psenak-ospf-segment-routing-ospfv3-extension-02}\\ \cite{ietf-ospf-segment-routing-msd-14,tantsura-ospf-segment-routing-msd-01,li-ospf-ospfv3-srv6-extensions,ppsenak-ospf-sr-flex-algo-00,ietf-lsr-flex-algo-00,rfc7471}\end{tabular} \\ \cline{3-4} 
+                                              &                                         & \textit{PCEP}    & \cite{ietf-pce-segment-routing,sivabalan-pce-segment-routing-03,sivabalan-pce-binding-label-sid-04} \\ \cline{3-4} 
+                                              &                                         & \textit{LISP}    & \cite{rodrigueznatal-lisp-srv6-00} \\ \hline
+\end{tabular}
+\end{table}
+
+We first propose a Taxonomy to classify each standardization document, and then in the next subsection\extended{s} we report \shortver{an overview of the key standardization activities} \extended{and a detailed listing of all the documents}.
+The result of this classification is shown in Table \ref{tab:standardization}. The first category is \textit{Architecture}, where all the documents regarding the description of the general architecture of a Segment Routing network are considered. The RFC 8402 falls into this category and describes the main features of SR, such as the source routing paradigm idea, the concept of SID and the definition of the two supported data planes.
+In the category \textit{Use-case and Requirements} the documents describing use case scenarios for SR, e.g., use of SR in WANs, data center networks, mobility and network slicing, are inserted. Specifically, in this category there are 3 RFCs: i) RFC 7855 introducing the Source Packet Routing in Networking (SPRING), ii) RFC 8355 related to network resiliency using SR, and iii) RFC 8354 that describes how to steer IPv6 or MPLS packets over the SPRING architecture.
+The third category is \textit{FRR} one, i.e, Fast Reroute realized through SR. The main standardization activity in this category is related to fast recovery after a link failure, and is referred to as Topology Independent Loop Free Alternate (TI-LFA), described in \cite{id-segment-routing-ti-lfa}. No RFC has been published in this category.
+\textit{Operations, Administration, and Maintenance} (OAM) is the fourth defined category, where we include all the standardization activities related to tools used for maintenance of the network. As example, RFC 8287 focus on the implementation of the ping and traceroute tools in SR.
+In the \textit{Performance Measurement} category we consider all the documents describing measurement procedures related to performance parameters, such as delay and packet loss, in an SR network. We include in this category also the two RFCs 6374 and 7876 that explain how to measure delay and packet loss in MPLS. Despite these two documents have not been produced during the standardization activities of SR, we decided to include them in Table \ref{tab:standardization} since they are massively used in the drafts for performance monitoring regarding SR.
+Finally, the \textit{Protocol Extensions} category covers two different set of documents related to extensions of legacy protocols: i) data plane protocols extensions, and ii) control plane protocols extensions.
+At the data plane, we consider two drafts describing SR-MPLS \cite{bryant-mpls-unified-ip-sr-03} and SRv6 \cite{draft-srh}.
+At the control plane, we focus on documents on modifications to routing protocol (eg. BGP and OSPF) for the dynamic distribution of the SIDs in the SR network, or control protocol for the communication between a central controller (in case of centralized control plane) and the devices at the data plane (eg. PCEP).
+In the next subsections we provide an overview of the selected documents of the standardization activity.
+
+\subsection{Key standardization efforts}
+In this subsection, we provide an overview of the most important standardization efforts. \cite{rfc8402} and \cite{id-segment-routing-policy} define key tenets of the SR architecture and discuss the benefits brought by SR in terms of scalability, privacy and security. \cite{id-sr-service-programming}, \cite{id-sr-for-sdwan} and  \cite{id-srv6-mobile-uplane} elaborate more on the support of key use cases like NFV/SFC, SD-WAN and next generation of mobile networks. Instead, \cite{id-srv6-network-prog} extends basic SR concepts and \cite{id-segment-routing-ti-lfa} provides Fast Re-route (FRR) mechanisms against single failures. Finally,  
+\cite{id-segment-routing-uloop} and \cite{ietf-lsr-flex-algo-00} analyzes the improvements of the routing stability and extensions to the routing protocols.
+
+\cite{rfc8402} describes Segment Routing architecture and the overall design. It defines the concept of a segment as a network instruction and presents the basic types of segments: prefix-SID, adjacency-SID, peering-SID and binding-SID. It also explains how such segments can be attached to data packets, leveraging the MPLS or IPv6 data planes, in order to steer traffic flows on any path in the network without requiring any per-flow state in the fabric.
+
+\cite{id-segment-routing-policy} details the concept of an SR policy. It explains how Candidate Paths are defined as explicit SID-lists or as dynamically computed paths based on some optimization criteria, and how the active Candidate Path is selected. Moreover, it presents various ways of steering traffic into an SR Policy, automatically by coloring BGP service routes, remotely using a Binding-SID, or statically with route policies. The concepts described in this draft equally apply to the MPLS and SRv6 dataplanes.
+
+The SR architecture is extended from the simple steering of packets across nodes to a general network programming approach in \cite{id-srv6-network-prog}. Using this framework, it is possible to encode arbitrary instructions and not only locations in a SID-list. Each SID is associated with a function to be executed at a specific location in the network. A set of basic functions are defined in~\cite{id-srv6-network-prog}, but other functions can be defined by network operators to fit their particular needs. Moreover, SID arguments allow functions to be provided additional context or their behavior to be tweaked on a per-flow basis.
+
+\cite{id-sr-service-programming} defines the service SIDs and describes how to implement service programming in SR-MPLS and SRv6 enabled networks. Key tenet is to associate to a SID to each network function (either physical or virtual). These service SIDs may be combined together in a SID-list and finely programmed by leveraging the network programming concept. They can also be combined with other types of SIDs to provide traffic engineering or VPN services. Service segments can be associated to legacy appliances as well (with no SR capabilities), thanks to SR proxy mechanisms which perform the SR processing and hides the SR information from the network function.
+
+In \cite{id-sr-for-sdwan} it is explained how SR technology enables underlay Service Level Agreements (SLA) to a VPN with scale and security while ensuring service opacity. SR based VPNs are analyzed in the case of a single provider and multiple providers. Moreover, the draft addresses also the control plane aspects of such solution which are managed by an over the top SD-WAN controller. Finally, the benefits brought by the SR technology to VPN services are analyzed in term of scalability, privacy, billing management and security.
+
+\cite{id-srv6-mobile-uplane} describes the applicability of SRv6 to the user plane of mobile networks. Three modes are addressed: traditional mode, enhanced mode and enhanced mode with interworking. In the first, mobile user plane is unchanged except for the use of SRv6 as transport instead of GTP-U. Enhanced mode uses only SRv6 and its programming framework. Finally, the last mode uses SRv6 but provides also interworking functionality with legacy components still using GTP. Moreover, the document defines the SID functions for the SRv6 mobile user plane and describes a mechanism for end-to-end network slicing.
+
+Topology Independent Loop-free Alternate (TI-LFA) \cite{id-segment-routing-ti-lfa} provides Fast Re-route (FRR) mechanisms protecting against link, node or local Shared Risk Link Groups (SRLGs)failures in SR enabled networks. For each destination in the network, a backup path is pre-computed and installed in the forwarding table, so that it is ready to be activated as soon as a failure is detected. For each destination, the backup path matches the post-convergence path, which is followed by the traffic after the network convergence. The draft analyzes also the benefits of using Segment Routing with the respect of traditional FRR solutions.
+
+\cite{id-segment-routing-uloop} describes a mechanism leveraging SR to prevent transient routing inconsistencies during the convergence period that follows a network topology modification. Instead of directly converging to a new next-hop after a topology modification, a node can temporarily steer the impacted traffic through a set of loop-free SR Policies, thus preventing it from being affected by routing inconsistencies. After the network has fully converged, the temporary SR Policies are removed with no impact on the traffic.
+
+\cite{ietf-lsr-flex-algo-00} defines a set of extensions to the IGP routing protocols that enable Prefix-SIDs to be associated with operator-defined shortest path algorithms, called SR Flexible Algorithms (Flex-Algo). These algorithms are defined as an optimization metric (IGP, TE or delay) and a set of constraints (e.g., resources to be excluded from the path). Each node participating in a Flex-Algo computes the shortest paths to the Prefix-SIDs of that Flex-Algo and installs them in it forwarding table. SR Flexible Algorithms allow traffic to be steered along traffic-engineered paths such as low-latency or dual-plane disjoint path with a single Prefix-SID.
+
+\extended{\subsection{Architecture}
+\begin{itemize}
+    \item Segment Routing Architecture \cite{rfc8402} RFC 8402 
+    \item SR Policy Architecture \cite{id-segment-routing-policy} WG DOCUMENT
+    \item SR Policy Architecture - Companion document \cite{id-sr-policy-considerations} DRAFT
+    \item YANG Data Model for Segment Routing Policy \cite{id-sr-policy-yang} DRAFT
+    \item Segment Routing with MPLS data plane \cite{id-segment-routing-mpls} WG DOCUMENT
+    \item SRv6 Network Programming \cite{id-srv6-network-prog} DRAFT
+    \item Segment Routing for Service Programming \cite{id-sr-service-programming} DRAFT
+\end{itemize}}
+
+\extended{\subsection{Use-Cases and Requirements}
+\begin{itemize}
+    \item Source Packet Routing in Networking (SPRING) Problem Statement and Requirements \cite{rfc7855} RFC 7855
+    \item Resiliency Use Cases in Source Packet Routing in Networking (SPRING) Networks \cite{rfc8355} RFC 8355 \ste{it should be updated on sr.net!} 
+    \item Use Cases for IPv6 Source Packet Routing in Networking (SPRING) \cite{rfc8354} RFC 8354
+    \item BGP-Prefix Segment in large-scale data centers \cite{id-segment-routing-msdc} WG DOCUMENT
+    \item Segment Routing Centralized BGP Peer Engineering \cite{id-segment-routing-central-epe} WG DOCUMENT (Submitted to IESG for Publication)
+    \item Interconnecting Millions Of Endpoints With Segment Routing \cite{id-spring-large-scale-interconnect} DRAFT
+    \item SR for SDWAN - VPN with Underlay SLA \cite{id-sr-for-sdwan} DRAFT
+    \item Segment Routing IPv6 for Mobile User Plane \cite{id-srv6-mobile-uplane} DRAFT \ste{the name could be updated on sr.net}
+    \item SRv6 for Mobile User-Plane 3GPP STUDY ITEM \ste{There is not a 3GPPP document with this name, there is this document ``Study on User-plane Protocol in 5GC'' which is still empty (Specification \#: 29.892)}
+    \item Segment Routing IPv6 for mobile user-plane PoCs \cite{id-srv6-mobile-pocs} DRAFT \ste{the name could be updated on sr.net}
+    \item Building blocks for Slicing in Segment Routing Network \cite{id-network-slicing-building-blocks} DRAFT
+    \item Segment Routing Traffic Accounting Counters \cite{id-sr-traffic-counters} DRAFT
+    \item Packet-Optical Integration in Segment Routing \cite{id-spring-poi-sr} DRAFT
+\end{itemize}}
+
+\extended{\subsection{Fast Reroute (FRR)}
+\begin{itemize}
+    \item Topology Independent Fast Reroute using Segment Routing \cite{id-segment-routing-ti-lfa} DRAFT
+    \item Loop avoidance using Segment Routing \cite{id-segment-routing-uloop} DRAFT
+    \item Micro-loop avoidance using SPRING \cite{id-microloop-avoidance} DRAFT EXPIRED \ste{do you want to mark expired drafts on sr.net?}
+\end{itemize}}
+
+\extended{\subsection{OAM}
+\begin{itemize}
+    \item A Scalable and Topology-Aware MPLS Dataplane Monitoring System \cite{id-spring-oam-usecase} WG DOCUMENT (Submitted to IESG for Publication)
+    \item Label Switched Path (LSP) Ping/Traceroute for Segment Routing (SR) IGP-Prefix and IGP-Adjacency Segment Identifiers (SIDs) with MPLS Data Planes \cite{rfc8287} \ste{update the name on sr.net?} RFC 8287
+    \item Operations, Administration, and Maintenance (OAM) in Segment Routing Networks with IPv6 Data plane (SRv6) \cite{id-srv6-oam} \ste{update the name on sr.net?} DRAFT
+    \item Traffic Accounting in Segment Routing Networks \cite{id-sr-traffic-accounting} DRAFT \ste{update the name on sr.net?}
+    \item SBFD for SR Policies \cite{id-bfd-sr-policy} DRAFT
+\end{itemize}}
+
+\extended{\subsection{Performance Measurement}
+\begin{itemize}
+    \item Packet Loss and Delay Measurement for MPLS Networks \cite{rfc6374} RFC 6374 \ste{is it a Segment Routing specification?}
+    \item UDP Return Path for Packet Loss and Delay Measurement for MPLS Networks \cite{rfc7876} RFC 7876
+    \item Performance Measurement in Segment Routing Networks with MPLS Data Plane \cite{id-sr-mpls-pm} DRAFT
+    \item UDP Path for In-band Performance Measurement for Segment Routing Networks \cite{id-udp-pm} DRAFT
+\end{itemize}}
+
+\extended{\subsection{Protocol Extensions}
+\subsubsection{SR-MPLS}
+\begin{itemize}
+    \item Segment Routing interworking with LDP WG DOCUMENT \cite{ietf-spring-segment-routing-ldp-interop-13} replaces \cite{filsfils-spring-segment-routing-ldp-interop-03}
+    \item Anycast Segments in MPLS based Segment Routing DRAFT \cite{ietf-spring-mpls-anycast-segments-02} replaces \cite{psarkar-spring-mpls-anycast-segments-02} 
+    \item Segment Routing Recursive Information DRAFT \cite{filsfils-spring-sr-recursing-info-05} (\plv{expired})
+    \item Recommendations for RSVP-TE and Segment Routing LSP co-existance WG DOCUMENT \cite{ietf-teas-sr-rsvp-coexistence-rec-04} and \cite{sitaraman-sr-rsvp-coexistence-rec-02}
+    \item SR-MPLS over IP DRAFT \cite{xu-mpls-sr-over-ip-01} replaces \cite{bryant-mpls-unified-ip-sr-03} and \cite{xu-mpls-unified-source-routing-instruction-04}
+\end{itemize}
+\subsubsection{SRv6}
+\begin{itemize}
+    \item IPv6 Segment Routing Header (SRH) WG DOCUMENT \cite{draft-srh}
+%    replaces \cite{previdi-6man-segment-routing-header-08}
+    \item Insertion of IPv6 Segment Routing Headers in a Controlled Domain DRAFT \cite{voyer-6man-extension-header-insertion-04}
+    \item YANG Data Model for SRv6 DRAFT \cite{raza-spring-srv6-yang-01}
+\end{itemize}    
+\subsubsection{BGP}
+\begin{itemize}
+    \item Segment Routing Prefix SID extensions for BGP WG DOCUMENT \cite{ietf-idr-bgp-prefix-sid-27} replaces \cite{keyupate-idr-bgp-prefix-sid-05}
+    \item Advertising Segment Routing Traffic Engineering Policies in BGP WG DOCUMENT \cite{ietf-idr-segment-routing-te-policy-04} replaces \cite{previdi-idr-segment-routing-te-policy-07} replaces \cite{sreekantiah-idr-segment-routing-te-00}
+    \item BGP Control Plane Extensions for Segment Routing based Service Chaining DRAFT \cite{dawra-idr-bgp-sr-service-chaining-02} replaces \cite{dawra-spring-bgp-sr-service-chaining-00}
+    \item BGP Signaling of IPv6-Segment-Routing-based VPN Networks DRAFT \cite{dawra-idr-srv6-vpn-04} replaces \cite{dawra-bgp-srv6-vpn-00}
+\end{itemize}    
+\subsubsection{BGP-LS}
+\begin{itemize}
+    \item BGP Link-State extensions for Segment Routing WG DOCUMENT \cite{ietf-idr-bgp-ls-segment-routing-ext-08} replaces \cite{gredler-idr-bgp-ls-segment-routing-ext-04}
+    \item SR Policy Distribution via BGP-LS WG DOCUMENT \cite{ietf-idr-te-lsp-distribution-09}
+    \item Segment Routing BGP Egress Peer Engineering BGP-LS Extensions WG DOCUMENT \cite{ietf-idr-bgpls-segment-routing-epe-15} replaces \cite{previdi-idr-bgpls-segment-routing-epe-03}
+    \item Signaling Maximum SID Depth using Border Gateway Protocol Link-State WG DOCUMENT (\plv{expired}) \cite{ietf-idr-bgp-ls-segment-routing-msd-01} replaces \cite{tantsura-idr-bgp-ls-segment-routing-msd-05}
+    \item BGP-LS Advertisement of IGP Traffic Engineering Performance Metric Extensions WG DOCUMENT \cite{ietf-idr-te-pm-bgp-10}
+    \item BGP Link State extensions for IPv6 Segment Routing (SRv6) DRAFT \cite{dawra-idr-bgpls-srv6-ext-03}
+    \item BGP Link-State Extensions for BGP-only Fabric DRAFT \cite{ketant-idr-bgp-ls-bgp-only-fabric-00}
+\end{itemize}    
+\subsubsection{IS-IS}
+\begin{itemize}
+    \item IS-IS Extensions for Segment Routing WG DOCUMENT \cite{ietf-isis-segment-routing-extensions} replaces \cite{previdi-isis-segment-routing-extensions-05}
+    \item IS-IS Extensions to Support Segment Routing over IPv6 Dataplane DRAFT \cite{bashandy-isis-srv6-extensions} replaces \cite{previdi-isis-ipv6-prefix-sid-03}
+    \item ISIS Segment Routing Flexible Algorithm WG DOCUMENT \cite{hegdeppsenak-isis-sr-flex-algo-02} replaced by \cite{ietf-lsr-flex-algo-00}
+    \item Signaling MSD (Maximum SID Depth) using IS-IS WG DOCUMENT \cite{ietf-isis-segment-routing-msd-12} replaces \cite{tantsura-isis-segment-routing-msd-02}
+    \item Advertising L2 Bundle Member Link Attributes in IS-IS WG DOCUMENT \cite{ietf-isis-l2bundles-07} replaces \cite{ginsberg-isis-l2bundles-02}
+    \item IS-IS Traffic Engineering (TE) Metric Extensions RFC 7810 \cite{rfc7810}
+\end{itemize}    
+\subsubsection{OSPF}
+\begin{itemize}
+    \item OSPF Extensions for Segment Routing WG DOCUMENT \cite{ietf-ospf-segment-routing-extensions} replaces \cite{psenak-ospf-segment-routing-extensions-05}
+    \item OSPFv3 Extensions for Segment Routing WG DOCUMENT \cite{ietf-ospf-ospfv3-segment-routing-extensions} replaces \cite{psenak-ospf-segment-routing-ospfv3-extension-02}
+    \item Signaling MSD (Maximum SID Depth) using OSPF WG DOCUMENT \cite{ietf-ospf-segment-routing-msd-14} replaces \cite{tantsura-ospf-segment-routing-msd-01}
+    \item OSPFv3 Extensions for SRv6 DRAFT \cite{li-ospf-ospfv3-srv6-extensions}
+    \item OSPF Segment Routing Flexible Algorithm WG DOCUMENT \cite{ppsenak-ospf-sr-flex-algo-00} replaced by \cite{ietf-lsr-flex-algo-00}
+    \item OSPF Traffic Engineering (TE) Metric Extensions RFC 7471 \cite{rfc7471}
+\end{itemize}    
+\subsubsection{PCEP}
+\begin{itemize}
+    \item PCEP Extensions for Segment Routing WG DOCUMENT \cite{ietf-pce-segment-routing} replaces \cite{sivabalan-pce-segment-routing-03}
+    \item Carrying Binding Label/Segment-ID in PCE-based Networks DRAFT \cite{sivabalan-pce-binding-label-sid-04}
+\end{itemize}    
+\subsubsection{LISP}
+\begin{itemize}
+    \item LISP Control Plane for SRv6 Endpoint Mobility DRAFT \cite{rodrigueznatal-lisp-srv6-00}
+\end{itemize}} 

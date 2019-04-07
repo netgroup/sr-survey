@@ -1,0 +1,167 @@
+\documentclass[10pt,journal,twocolumn]{IEEEtran}
+\usepackage[noadjust]{cite}
+%important package
+\usepackage{multirow} 
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{rotating}
+\usepackage{kantlipsum} %with the next two command (commath, allowdisplaybreaks) -> allow to break the formulas along the pages
+\usepackage{commath}
+\allowdisplaybreaks
+\usepackage{mathtools}  %with the next command adjust the vertical space between formulas
+%\setlength{\jot}{5pt}
+%\usepackage{ragged2e}   %if add \justify at each line, that line would be justified. This is used because the abstract of transaction style is not justified  ---- it is not compatible with twocolumn-IEEETrans
+%not important
+\usepackage{verbatim}
+\usepackage{xr-hyper} 
+\usepackage{enumitem}
+%\usepackage{fullpage} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref package may need to be commented for Latex upload
+%\usepackage[pdfusetitle, pdfauthor={Michael Shell, My institution}]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{bibentry}
+%\nobibliography{references}
+
+\usepackage{epstopdf}
+\usepackage{wrapfig}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath} %[cmex10]
+%\usepackage{flushend} %********************* This package has a bug: Do no include it
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage{subcaption} %******************* This package has conflict with sufig and subfigure
+%\usepackage{subfigure}
+%\usepackage{subfig}
+\captionsetup[table]{labelsep=space,justification=centering,font=sc}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{breqn}
+\newtheorem{thm}{Property}
+\newtheorem{thm1}{Theorem}
+\newtheorem{thm3}{Proposition}
+\newtheorem{thm5}{Remark}
+\newtheorem{thm7}{Lemma}
+\algnewcommand\algorithmicinput{\textbf{INPUT:}}
+\algnewcommand\INPUT{\item[\algorithmicinput]}
+\algnewcommand\algorithmicoutput{\textbf{OUTPUT:}}
+\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+%\usepackage[table]{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\note}[1]{\textcolor{blue}{\textbf{[#1]}}}
+
+% To remove all comments comment the line \commentsontrue 
+\newcommand{\commentBy}[3]{\textcolor{#1}{\textbf{#2:} #3}}
+%\newcommand{\commentBy}[3]{\ignorespaces}
+
+\newif\ifcommentson
+%uncomment the line below to show comments
+\commentsontrue
+
+%define comments for different authors hereafter
+\newcommand{\plv}[1]{\ifcommentson \commentBy{RoyalPurple}{PLV}{#1} \fi}
+\newcommand{\ste}[1]{\ifcommentson \commentBy{blue}{SS}{#1} \fi}
+\newcommand{\fc}[1]{\ifcommentson \commentBy{red}{FC}{#1} \fi}
+\newcommand{\pc}[1]{\ifcommentson \commentBy{red}{PC}{#1} \fi}
+
+\newif\ifextended
+\newif\ifshortver
+%%% Show only short version in black
+%%%        \shorvetrue 
+%%%        %\extendedtrue 
+
+%%% Show only extended version in black
+%%%        %\shorvetrue 
+%%%        \extendedtrue 
+
+%%% Show short version in blue and extended version in purple
+%%%        \shorvetrue 
+%%%        \extendedtrue 
+
+\shortvertrue
+%\extendedtrue
+
+\newcommand{\extended}[1]{\ifextended \ifshortver \textcolor{purple}{#1} \else \textcolor{black}{#1} \fi  \fi}
+\newcommand{\shortver}[1]{\ifshortver \ifextended \textcolor{blue}{#1} \else \textcolor{black}{#1} \fi \fi}
+
+\newcommand{\optional}[1]{\ignorespaces}
+% correct bad hyphenation here
+\hyphenation{net-works fa-ci-li-ta-tes fa-ci-li-ta-te mo-ni-to-ring par-ti-cu-lar pe-ri-o-di-cal-ly mi-ni-mi-zing va-ria-tions de-li-ve-red per-ri-o-di-cal-ly}
+
+\begin{document}
+
+\bstctlcite{IEEEexample:BSTcontrol}
+
+\title{Segment Routing: A comprehensive survey of research activities, standardization efforts and implementation results}
+
+\author{Pier Luigi Ventre, Stefano Salsano, Marco Polverini, Antonio Cianfrani\\
+Ahmed Abdelsalam, Clarence Filsfils, Pablo Camarillo, Francois Clad
+\IEEEcompsocitemizethanks{\protect
+\IEEEcompsocthanksitem P.L. Ventre is with with the Department of Electronic Engineering at the University of Rome Tor Vergata - Rome, Italy, E-mail: pier.luigi.ventre@uniroma2.it.
+\IEEEcompsocthanksitem S. Salsano is with the Department of Electronic Engineering at the University of Rome Tor Vergata and with the Consorzio Nazionale Interuniversitario per le Telecomunicazioni (CNIT) - Rome, Italy, E-mail: stefano.salsano@uniroma2.it.
+\IEEEcompsocthanksitem M. Polverini and A. Cianfrani are with Department of Information Engineering, Electronics and Telecommunications at the University of Rome Sapienza - Rome, Italy, E-mail: \{marco.polverini, antonio.cianfrani\}@uniroma1.it.
+\IEEEcompsocthanksitem A. Abdelsalam, C. Filsfils, P. Camarillo and F. Clad are with Cisco Systems, E-mail: \{ahabdels, cfilsfil, pcamaril, fclad\}@cisco.com
+}
+\vspace{2ex}
+\textbf{\\Submitted paper under review - v02 - April 2019}
+\vspace{-3ex}
+}
+
+\markboth{\shortver{Submitted to IEEE Communications Surveys \& Tutorials}}
+{P.L. Ventre \MakeLowercase{\textit{et al.}}: Segment Routing: A comprehensive survey of research activities, standardization efforts and implementation results}
+
+\IEEEtitleabstractindextext{
+\begin{abstract}
+Telco Operators were suffering from lack of flexibility and scalability to realize an increasing variety of cloud based services, meet the demand for more bandwidth and keep the costs low and infrastructures agile. Since 2012 Segment Routing (SR) architecture, also known as Source Packet Routing In Networking (SPRING) in the Internet Engineering Task Force, has been proposed as solution aimed at filling this gap. SR founds its architecture on the source routing and tunneling paradigms, becoming a promising solution to support services like Traffic Engineering and Virtual Private Networks in IP backbones and datacenters. SR architecture has also interesting scalability properties, as it reduces the amount of state information that needs to be configured in the core nodes since devices steer packets over paths using a sequence of instructions (segments) placed in the packet header at the ingress of the network. Two instantations exist of the Segment Routing architecture: it can be implemented using either the MPLS or the IPv6 data plane. Recently, the IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general network programming approach by the Internet draft SRv6 Network Programming making SRv6 architecture appealing to new use cases like Service Function chaining and Network Function Virtualization.
+
+In this paper we present a comprehensive survey on SR technology analyzing research activities, standardization efforts and implementation results. Firstly, we introduce the motivation for Segment Routing and its evolution from its public first in 2012. Then, we provide a common ground and a reference conceptual framework for the survey using a bottom-up approach. Next, we analyze research activities using a categorization approach. We have identified 7 main categories during our analysis of the current state of the art. They are respectively Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Network Programming and Miscellaneous. We also look to the path of the standardization efforts, we describe the main 9 standardization efforts and we list other ongoing activities and provide pointers to them. Last but not least, we elaborate on the implementation results and we provide references for tutorials, source code and ready-to-go virtual setups.
+\end{abstract}
+
+\begin{IEEEkeywords} 
+Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Networking Programming, Performance, Linux kernel, VPP, Data Plane, Control Plane, Southbound APIs, Northbound APIs, Software Routers, Hardware Routers, Open Source, Software Defined Networking, SDN, Network Function Virtualization, NFV, Service Function Chaining, SFC, Standards 
+\end{IEEEkeywords}
+}
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+\input{sec/1-introduction}
+\input{sec/2-architecture}
+\input{sec/3-research}
+\input{sec/4-standardization}
+\input{sec/5-tools}
+
+\begin{comment}
+\input{sec/6-deployments}
+\input{sec/7-future}
+\end{comment}
+
+\extended{\input{sec/8-conclusions.tex}}
+
+\section*{Acknowledgment}
+    This work has received funding from the Cisco University Research Program Fund.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\extended{
+\vspace{-4em}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/ventre.jpg}}]{Pier Luigi Ventre}
+received his Master's degree in Computer Engineering from University of Rome Tor Vergata in 2014, with a thesis on Information-Centric Networking and Software Defined Networking. From 2013 to 2015, he was one of the beneficiary of the scholarship ``Orio Carlini'' granted by the Italian NREN GARR. His main research interests focus on Computer Networks, Software Defined Networking, Virtualization and Information-Centric Networking. He worked in several EU research projects. Currently, He is a PhD student in Electronic Engineering at University of Rome Tor Vergata.
+\end{IEEEbiography}
+\vspace{-4em}
+\begin{IEEEbiography}[{\includegraphics[width=0.9in,height=1.10in,clip,keepaspectratio]{fig/bio/salsano.png}}]{Stefano Salsano}
+(M'98-SM'13) received his PhD from University of Rome ``La Sapienza'' in 1998. He is Associate Professor at the University of Rome Tor Vergata. He participated in 15 research projects founded by the EU, being project coordinator in one of them and technical coordinator in two. He has been PI in several research and technology transfer contracts funded by industries. 
+His current research interests include SDN, Network Virtualization, Cybersecurity, Information Centric Networking. He is co-author of an IETF RFC and of more than 140 peer-reviewed papers and book chapters.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/filsfils.jpg}}]{Clarence Filsfils}
+is a Cisco Systems Fellow, has a 20-year expertise leading innovation, productization, marketing and deployment for Cisco Systems. He invented the Segment Routing Technology and is leading its productization, marketing and deployment. Previously, he invented and led the Fast Routing Convergence Technology and was the lead designer for Cisco System's QoS deployments. Clarence is a regular speaker at leading industry conferences. He holds over 130 patents and is a prolific writer, either in academic circle, or standardization or books.
+\end{IEEEbiography}}
+\end{document}
+
