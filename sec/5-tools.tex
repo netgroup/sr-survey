@@ -1,4 +1,4 @@
-\section{SR Implementations and tools}
+\section{SR implementations and deployments}
 \label{sec:tools}
 
 \begin{comment}
@@ -11,7 +11,7 @@
 
 \end{comment}
 
-In this section, we describe the implementation results related to SR. At the time of writing, two main data-plane for software routers exist which are respectively the Linux kernel implementation (described in Subsection \ref{sec:linux}) and the realization done inside the FD.io VPP project (described in Subsection \ref{sec:vpp}). Most of the research efforts analyzed in this work have released as open source the components and the extensions realized for SR. Section \ref{sec:rest} elaborates more on the implementation results related to the research activities. Finally, in Subsection \ref{sec:hw_interop} we briefly analyze the hardware implementations of SR and the inter-operability efforts done by several vendors.
+In this section, we describe the implementation results related to SR. We will mostly focus on the SRv6 version which is attracting a lot of interest and development efforts. The SR-MPLS version is already in a mature development status, well supported by the main core router vendors (e.g. Cisco, Huawei, Juniper). SR-MPLS can be incrementally deployed in current IP-MPLS backbones, as it only requires software updates to networking devices. Operators can migrate to SR-MPLS to simplify the control plane operations and improve the scalability. As for the SRv6 dataplane, there are two main Open Source dataplane implementations for software routers: the Linux kernel implementation (described in Subsection \ref{sec:linux}) and the realization done inside the FD.io VPP project (described in Subsection \ref{sec:vpp}).  Section \ref{sec:rest} elaborates more on the implementation results related to the research activities. Finally, in Subsection \ref{sec:hw_interop} we briefly analyze the hardware implementations of SR, the inter-operability efforts done by several vendors and the currently planned deployments of SRv6 in large production networks.
 
 \subsection{Linux kernel}
 \label{sec:linux}
@@ -56,11 +56,17 @@ SRNK \cite{mayer2019efficient} extends the implementation of SRv6 in the Linux k
 
 \cite{aubry2018robustly} describes the implementation of a path computation element able to compute robust disjoints SR paths which remains disjoint even after an input set of failures without the need of configuration changes. The java implementation of the algorithms, the public topologies used for the experiments, the experimental results and a detailed walkthrough to replicate the experiments of the paper are available at \cite{robustly-home}.
 
-\subsection{Hardware implementations and inter-operability efforts}
+\subsection{Hardware implementations, inter-operability efforts and planned deployments}
 \label{sec:hw_interop}
 
-\cite{srv6-inter-op} provides an overview of IPv6 Segment Routing implementations and details some interoperability scenarios that have been demonstrated at public events. As regards the hardware implementations, the platforms ASR 1000, ASR 9000, NCS 5500, NCS 540 and NCS560 are reported as the Cisco Routing platforms supporting SRH processing \cite{cisco}. The programmable devices based on Tofino chipset \cite{barefoot} can be programmed to support SRH processing. This is also true for the reference software implementation of the P4 devices \cite{bmv2}, Stratum based devices \cite{stratum} and all the programmable chipset (Cavium Xpliant \cite{cavium} to give an example). The draft elaborates also on the open source applications supporting the processing of the IPv6 Segment Routing header, among which we mention the well known Wireshark \cite{wireshark}, tcpdump \cite{tcpdump}, iptables \cite{iptables}, nftables \cite{nftables} and snort \cite{snort}.
+\cite{srv6-inter-op} provides an overview of IPv6 Segment Routing implementations and details some interoperability scenarios that have been demonstrated at public events. With regards to the hardware implementations, the platforms ASR 1000, ASR 9000, NCS 5500, NCS 540 and NCS560 are reported as the Cisco Routing platforms supporting SRH processing \cite{cisco}; ASR 9000 and NCS 5500 being deployed in production networks. The programmable devices based on Tofino chipset \cite{barefoot} can be programmed to support SRH processing. This is also true for the reference software implementation of the P4 devices \cite{bmv2}, Stratum based devices \cite{stratum} and all the programmable chipset (Cavium Xpliant \cite{cavium} to give an example). The draft elaborates also on the open source applications supporting the processing of the IPv6 Segment Routing header, among which we mention the well known Wireshark \cite{wireshark}, tcpdump \cite{tcpdump}, iptables \cite{iptables}, nftables \cite{nftables} and snort \cite{snort}.
 
 The implementations, described in the previous paragraph, have been used in interoperability testing scenarios showcased at the 2017 SIGCOMM conference \cite{interop-demo}. The set of experiments included a L3 VPN scenario augmented with TE functionality and services function chaining processing. SREXT, VPP, Linux kernel, Barefoot Tofino, Cisco NCS5500 and Cisco ASR1000 routers were the network devices implementing SRv6 behaviors. While iptables and snort have been used as service functions. Finally, Wireshark and tcpdump have been leveraged to verify the proper operations of the network. 
 
-\cite{draft-srh} reports the implementation status of other vendors. Juniper's Trio and vTrio NPUs has an experimental support of SRH (SRH insertion mode and \textit{End} processing of interfaces addresses). Instead, Huawei's VRP platform is in production stage and has the capability of adding SRH header and performing \textit{End} processing.
+\cite{ietf-6man-segment-routing-header} reports the implementation status of other vendors. Juniper's Trio and vTrio NPUs has an experimental support of SRH (SRH insertion mode and \textit{End} processing of interfaces addresses). Instead, Huawei's VRP platform is in production stage and has the capability of adding SRH header and performing \textit{End} processing.
+
+To conclude the section, we mention that large scale deployments of SRv6 in production networks have been recently announced. In particular two mobile operators are planning SRv6 deployments in their ``pre-5G'' or ``5G-ready'' networks (\cite{blog-cisco-softbank-srv6,blog-cisco-iliad-srv6}).
+
+%Stefano: in the submitted version I have removed the references to the blog posts from CISCO:
+%To conclude the section, we mention that large scale deployments of SRv6 in production networks have been recently announced. In particular two mobile operators are planning SRv6 deployments in their ``pre-5G'' or ``5G-ready'' networks\shortver{.} \extended{(\cite{blog-cisco-softbank-srv6,blog-cisco-iliad-srv6}).}
+

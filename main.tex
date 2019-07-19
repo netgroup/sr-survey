@@ -38,6 +38,7 @@
 \usepackage{subcaption} %******************* This package has conflict with sufig and subfigure
 %\usepackage{subfigure}
 %\usepackage{subfig}
+\usepackage{xspace}
 \captionsetup[table]{labelsep=space,justification=centering,font=sc}
 
 \usepackage[T1]{fontenc}
@@ -70,6 +71,56 @@
 \newcommand{\fc}[1]{\ifcommentson \commentBy{red}{FC}{#1} \fi}
 \newcommand{\pc}[1]{\ifcommentson \commentBy{red}{PC}{#1} \fi}
 
+%numbers for referenced scientific papers and standardization drafts
+
+%%%% SCIENTIFIC PAPERS
+\newcommand{\coveredCategories}{seven\xspace}
+\newcommand{\CoveredCategories}{Seven\xspace}
+\newcommand{\numCoveredCategories}{7\xspace}
+
+\newcommand{\monitoringPapers}{seven\xspace}
+\newcommand{\MonitoringPapers}{Seven\xspace}
+\newcommand{\numMonitoringPapers}{7\xspace}
+
+\newcommand{\tePapers}{nineteen\xspace}
+\newcommand{\TePapers}{Nineteen\xspace}
+\newcommand{\numTePapers}{19\xspace}
+
+\newcommand{\failurePapers}{nine\xspace}
+\newcommand{\FailurePapers}{Nine\xspace}
+\newcommand{\numFailurePapers}{9\xspace}
+
+\newcommand{\ccaPapers}{fourteen\xspace}
+\newcommand{\CcaPapers}{Fourteen\xspace}
+\newcommand{\numCcaPapers}{14\xspace}
+
+\newcommand{\pathencPapers}{eight\xspace}
+\newcommand{\PathencPapers}{Eight\xspace}
+\newcommand{\numPathencPapers}{8\xspace}
+
+\newcommand{\networkProgPapers}{eight\xspace}
+\newcommand{\NetworkProgPapers}{Eight\xspace}
+\newcommand{\numNetworkProgPapers}{8\xspace}
+
+\newcommand{\miscPapers}{six\xspace}
+\newcommand{\MiscPapers}{Six\xspace}
+\newcommand{\numMiscPapers}{6\xspace}
+
+\newcommand{\totalPapers}{seventy five\xspace}
+\newcommand{\TotalPapers}{Seventy Five\xspace}
+\newcommand{\numTotalPapers}{75\xspace}
+
+%%%% STANDARDIZATION DRAFTS
+
+% table and these numbers do not coincide (replicated entries and rfc that are not part of SR)
+\newcommand{\rfcStandardization}{twelve\xspace}
+\newcommand{\RFCStandardization}{Twelve\xspace}
+\newcommand{\numRFCStandardization}{12\xspace}
+
+\newcommand{\draftStandardization}{fifty two\xspace}
+\newcommand{\DraftStandardization}{Fifty Two\xspace}
+\newcommand{\numDrafttandardization}{52\xspace}
+
 \newif\ifextended
 \newif\ifshortver
 %%% Show only short version in black
@@ -87,6 +138,9 @@
 \shortvertrue
 %\extendedtrue
 
+%in the shortver v03 submitted to arxiv I have re-introduced the references to the blog posts from CISCO, removed in the version submitted to the journal (see 5-tools.tex)
+%in the shortver v03 submitted to arxiv I have removed the biographies (see around line 210 of this file main.tex)
+
 \newcommand{\extended}[1]{\ifextended \ifshortver \textcolor{purple}{#1} \else \textcolor{black}{#1} \fi  \fi}
 \newcommand{\shortver}[1]{\ifshortver \ifextended \textcolor{blue}{#1} \else \textcolor{black}{#1} \fi \fi}
 
@@ -98,9 +152,9 @@
 
 \bstctlcite{IEEEexample:BSTcontrol}
 
-\title{Segment Routing: A comprehensive survey of research activities, standardization efforts and implementation results}
+\title{Segment Routing: a Comprehensive Survey of Research Activities, Standardization Efforts and Implementation Results}
 
-\author{Pier Luigi Ventre, Stefano Salsano, Marco Polverini, Antonio Cianfrani\\
+\author{Pier Luigi Ventre, Stefano Salsano, Marco Polverini, Antonio Cianfrani,\\
 Ahmed Abdelsalam, Clarence Filsfils, Pablo Camarillo, Francois Clad
 \IEEEcompsocitemizethanks{\protect
 \IEEEcompsocthanksitem P.L. Ventre is with with the Department of Electronic Engineering at the University of Rome Tor Vergata - Rome, Italy, E-mail: pier.luigi.ventre@uniroma2.it.
@@ -116,15 +170,18 @@ Ahmed Abdelsalam, Clarence Filsfils, Pablo Camarillo, Francois Clad
 \markboth{\shortver{Submitted to IEEE Communications Surveys \& Tutorials}}
 {P.L. Ventre \MakeLowercase{\textit{et al.}}: Segment Routing: A comprehensive survey of research activities, standardization efforts and implementation results}
 
-\IEEEtitleabstractindextext{
-\begin{abstract}
-Telco Operators were suffering from lack of flexibility and scalability to realize an increasing variety of cloud based services, meet the demand for more bandwidth and keep the costs low and infrastructures agile. Since 2012 Segment Routing (SR) architecture, also known as Source Packet Routing In Networking (SPRING) in the Internet Engineering Task Force, has been proposed as solution aimed at filling this gap. SR founds its architecture on the source routing and tunneling paradigms, becoming a promising solution to support services like Traffic Engineering and Virtual Private Networks in IP backbones and datacenters. SR architecture has also interesting scalability properties, as it reduces the amount of state information that needs to be configured in the core nodes since devices steer packets over paths using a sequence of instructions (segments) placed in the packet header at the ingress of the network. Two instantations exist of the Segment Routing architecture: it can be implemented using either the MPLS or the IPv6 data plane. Recently, the IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general network programming approach by the Internet draft SRv6 Network Programming making SRv6 architecture appealing to new use cases like Service Function chaining and Network Function Virtualization.
+\begin{comment} Telco Operators were suffering from lack of flexibility and scalability to realize an increasing variety of cloud based services, meet the demand for more bandwidth and keep the costs low and infrastructures agile. Since 2012 Segment Routing (SR) architecture, also known as Source Packet Routing In Networking (SPRING) in the Internet Engineering Task Force, has been proposed as solution aimed at filling this gap. SR founds its architecture on the source routing and tunneling paradigms, becoming a promising solution to support services like Traffic Engineering and Virtual Private Networks in IP backbones and datacenters. SR architecture has also interesting scalability properties, as it reduces the amount of state information that needs to be configured in the core nodes since devices steer packets over paths using a sequence of instructions (segments) placed in the packet header at the ingress of the network. Two instantations exist of the Segment Routing architecture: it can be implemented using either the MPLS or the IPv6 data plane. Recently, the IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general network programming approach by the Internet draft SRv6 Network Programming making SRv6 architecture appealing to new use cases like Service Function chaining and Network Function Virtualization. \end{comment}
 
-In this paper we present a comprehensive survey on SR technology analyzing research activities, standardization efforts and implementation results. Firstly, we introduce the motivation for Segment Routing and its evolution from its public first in 2012. Then, we provide a common ground and a reference conceptual framework for the survey using a bottom-up approach. Next, we analyze research activities using a categorization approach. We have identified 7 main categories during our analysis of the current state of the art. They are respectively Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Network Programming and Miscellaneous. We also look to the path of the standardization efforts, we describe the main 9 standardization efforts and we list other ongoing activities and provide pointers to them. Last but not least, we elaborate on the implementation results and we provide references for tutorials, source code and ready-to-go virtual setups.
+
+\IEEEtitleabstractindextext{
+\begin{abstract} 
+Fixed and mobile telecom operators, enterprise network operators and cloud providers strive to face the challenging demands coming from the evolution of IP networks (e.g. huge bandwidth requirements, integration of billions of devices and millions of services in the cloud). Proposed in the early 2010's, the Segment Routing (SR) architecture helps facing these challenging demands and it is being adopted and deployed. The SR architecture is based on the concept of source routing and has interesting scalability properties as it dramatically reduces the amount of state information to be configured in the core nodes to support complex services. The SR architecture has been first implemented with the MPLS dataplane and then, quite recently, with the IPv6 dataplane (SRv6). The IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general \textit{network programming} approach, making it very suitable for use cases like Service Function Chaining and Network Function Virtualization. 
+In this paper we present a tutorial and a comprehensive survey on the SR technology, analyzing research activities, standardization efforts and implementation results. We start with an introduction on the motivations for Segment Routing and an overview of its evolution and standardization. Then, we provide a tutorial on the Segment Routing technology, with focus on the novel SRv6 solution. Next, we thoroughly analyze the research activities according to a taxonomy. We have identified \numCoveredCategories main categories during our analysis of the current state of the art: Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Network Programming and Miscellaneous. We also discuss the standardization efforts, providing details on the most important documents and listing other ongoing activities along with pointers to them. Last but not least, we present the up-to-date status of SR implementation and provide references to several open source projects.
 \end{abstract}
 
+
 \begin{IEEEkeywords} 
-Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Networking Programming, Performance, Linux kernel, VPP, Data Plane, Control Plane, Southbound APIs, Northbound APIs, Software Routers, Hardware Routers, Open Source, Software Defined Networking, SDN, Network Function Virtualization, NFV, Service Function Chaining, SFC, Standards 
+Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic Engineering, Failure Recovery, Path Encoding, Networking Programming, Performance, Linux, VPP, Data Plane, Control Plane, Southbound APIs, Northbound APIs, Open Source, Software Defined Networking, SDN, Service Function Chaining, SFC, Standards 
 \end{IEEEkeywords}
 }
 \maketitle
@@ -142,7 +199,7 @@ Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic 
 \input{sec/7-future}
 \end{comment}
 
-\extended{\input{sec/8-conclusions.tex}}
+\input{sec/8-conclusions.tex}
 
 \section*{Acknowledgment}
     This work has received funding from the Cisco University Research Program Fund.
@@ -150,18 +207,28 @@ Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
+%\shortver{
 \extended{
 \vspace{-4em}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/ventre.jpg}}]{Pier Luigi Ventre}
 received his Master's degree in Computer Engineering from University of Rome Tor Vergata in 2014, with a thesis on Information-Centric Networking and Software Defined Networking. From 2013 to 2015, he was one of the beneficiary of the scholarship ``Orio Carlini'' granted by the Italian NREN GARR. His main research interests focus on Computer Networks, Software Defined Networking, Virtualization and Information-Centric Networking. He worked in several EU research projects. Currently, He is a PhD student in Electronic Engineering at University of Rome Tor Vergata.
 \end{IEEEbiography}
-\vspace{-4em}
 \begin{IEEEbiography}[{\includegraphics[width=0.9in,height=1.10in,clip,keepaspectratio]{fig/bio/salsano.png}}]{Stefano Salsano}
-(M'98-SM'13) received his PhD from University of Rome ``La Sapienza'' in 1998. He is Associate Professor at the University of Rome Tor Vergata. He participated in 15 research projects founded by the EU, being project coordinator in one of them and technical coordinator in two. He has been PI in several research and technology transfer contracts funded by industries. 
-His current research interests include SDN, Network Virtualization, Cybersecurity, Information Centric Networking. He is co-author of an IETF RFC and of more than 140 peer-reviewed papers and book chapters.
+(M'98-SM'13) received his PhD from University of Rome ``La Sapienza'' in 1998. He is Associate Professor at the University of Rome Tor Vergata. Since July 2018 he is the Coordinator of the Bachelor's Degree ``Ingegneria di Internet'' and of the Master's Degree ``ICT and Internet Engineering'' He participated in 16 research projects funded by the EU, being project coordinator in one of them and technical coordinator in two. He has been PI in several research and technology transfer contracts funded by industries. 
+His current research interests include SDN, Network Virtualization, Cybersecurity, Information Centric Networking. He is co-author of an IETF RFC and of more than 160 peer-reviewed papers and book chapters.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=0.9in,height=1.10in,clip,keepaspectratio]{fig/bio/marco.jpeg}}]{Marco Polverini} received the Master's Degree in Telecommunications Engineering and the Ph.D. Degree in Information and Communication Engineering from the University of Rome La Sapienza, in 2010 and 2014, respectively, where he is currently a Research Fellow at the Department of Information, Electronic and Telecommunications Engineering. His main research interests are routing protocols for energy saving in IP networks, network traffic monitoring and measurement in next generation routing technologies.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=0.9in,height=1.10in,clip,keepaspectratio]{fig/bio/cianfrani.pdf}}]{Antonio Cianfrani} received the master's degree in telecommunications engineering and the Ph.D. degree in information and communication engineering from the University of Rome La Sapienza in 2004 and 2008, respectively. He is currently an Associate Professor at the DIET Department, University of Rome La Sapienza. His fields of interests include routing algorithms, network protocols, performance evaluation of software routers and green networks. His current research interests are focused on segment routing and traffic matrix assessment. He is co-author of more than 70 peer-reviewed papers and book chapters. He serves on the Editorial Boards of the IEEE Transactions on Green Communications and Networking.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/ahmed.jpeg}}]{Ahmed Abdelsalam} is a software engineer in the Segment Routing v6 at Cisco. He is also a PhD student in computer science at Gran Sasso Science Institute (GSSI). His main research interests focus on IPv6 Segment Routing (SRv6), Network Function Virtualization (NFV), Software Defined Networks (SDN), Service Function Chaining (SFC), and containers networking. He contributed to many Open source including the Linux kernel, Tcpdump, IPTables, and Snort.
 \end{IEEEbiography}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/filsfils.jpg}}]{Clarence Filsfils}
 is a Cisco Systems Fellow, has a 20-year expertise leading innovation, productization, marketing and deployment for Cisco Systems. He invented the Segment Routing Technology and is leading its productization, marketing and deployment. Previously, he invented and led the Fast Routing Convergence Technology and was the lead designer for Cisco System's QoS deployments. Clarence is a regular speaker at leading industry conferences. He holds over 130 patents and is a prolific writer, either in academic circle, or standardization or books.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/fclad.jpeg}}]{Francois Clad} received the M.Sc and Ph.D. degree in computer science from University of Strasbourg, France, in 2011 and 2014, respectively. He spent one year as a Post-Doctoral researcher with Institute IMDEA Networks, Madrid, Spain, before joining Cisco in 2015. His research activities are focused on IP routing and in particular evolving the Segment Routing technology.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/pcamaril.JPG}}]{Pablo Camarillo} is one of the engineers behind Segment Routing v6 at Cisco. He is coauthor of various IETF drafts, holds several patents and has developed the SR implementation in FD.io VPP. Prior joining Cisco he was a research engineer at IMDEA Networks institute, where he prototyped a BGP route server in ExaBGP and researched on the algorithmic of TI-LFA (SR Topology Independent Loop Free Alternates).
 \end{IEEEbiography}}
 \end{document}
 

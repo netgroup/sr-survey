@@ -1,7 +1,7 @@
 \section{Research activities}
 \label{sec:research}
 
-\extended{\cite{li2018ilp}, \cite{settawatcharawanit2018segment}, \cite{schuller2018practical}, \cite{chi2018live}, \cite{huang2018real}, \cite{gang2018throughput}, \cite{eramo2019effectiveness}, \cite{zhong2018improving}}
+\extended{\cite{li2018ilp}, \cite{settawatcharawanit2018segment}, \cite{schuller2018practical}, \cite{chi2018live}, \cite{huang2018real}, \cite{gang2018throughput}, \cite{eramo2019effectiveness}, \cite{zhong2018improving}, \cite{basuki2019assuring}, \cite{spinelli2019chaining}, \cite{long2019scalable}, \cite{van2019rp1}, \cite{basuki2018sub}, \cite{jadin2019cg4sr}}
 
 In this section, we describe the research activities on SR, and we provide two different classifications to characterize the research papers on the basis of their main scope. We also show how to extract useful information regarding the ongoing SR research activity from analyzing the relationship among the two classifications proposed.
 
@@ -24,8 +24,8 @@ Finally, we define a \emph{Miscellaneous} category, where we put all the works n
 \begin{tabular}{|l|c|}
 \hline
 \multicolumn{1}{|c|}{\textbf{Category}}                                               & \textbf{References} \\ \hline
-\textit{Monitoring (MON)}                                                                   & \cite{interoperable,scmon,li2018bandwidth,polverini2018routing,cianfrani2018heuristic,polveriniNoF2018,id-udp-pm} \\ \hline
-\textit{Traffic Engineering (TE)}                                                          & \cite{anefficient,novelsdn,ascalableand,energyefficient,ghuman2017per,trafficpmsr,ontraffic,optimizedte,roomi2018semi,defo1,gay2017expect,defo2,incrementaldeploy,moreno2017traffic,pereira2017optimizing,barakabitzenovel,pang2017sdn,dugeon2017demonstration,hou2019optimization} \\ \hline
+\textit{Monitoring (MON)}                                                                   & \cite{interoperable,scmon,li2018bandwidth,polverini2018routing,cianfrani2018heuristic,polveriniNoF2018,xhonneux2018leveraging} \\ \hline
+\textit{Traffic Engineering (TE)}                                                          & \cite{anefficient,novelsdn,ascalableand,energyefficient,ghuman2017per,trafficpmsr,ontraffic,optimizedte,roomi2018semi,defo1,gay2017expect,defo2,incrementaldeploy,moreno2017traffic,pereira2017optimizing,barakabitze2018novel,pang2017sdn,dugeon2017demonstration,hou2019optimization} \\ \hline
 \textit{Failure Recovery (FR)}                                                             & \cite{timfa,trafficduplication,aubry2018robustly,optimizingrestoration,segmentfor,srdynamicrestoration,reliablesr,xhonneux2018flexible,foerster2018local} \\ \hline
 \textit{\begin{tabular}[c]{@{}l@{}}Centrally Controlled\\ Architectures (CCA)\end{tabular}} & \cite{firstdemonstration,sdnandpce,paolucci2018network,paolucci2017service,castoldi2017segment,springopen,fressancourt2015sdn,li2017segment,lebrun2018software,duchene2018exploring,ventre2018sdn,demonstrationofsr,experimentalmulti,evolve} \\ \hline
 \textit{Path Encoding (PE)}                                                                & \cite{experimentaldemonstration,efficientlabel,pathencoding,labelencoding,pmsr,translating,liaoruo2018optimizing,guedrez2017new} \\ \hline
@@ -75,8 +75,8 @@ Tab.~\ref{tab:classification} reports the classification of the research works a
 \hline
 \multicolumn{4}{|c|}{\textbf{SR feature exploitation}}                                                                                                                                                                                                                                     & \multicolumn{2}{c|}{\textbf{SR functions optimization}}                                                                               & \textbf{Extend SR}                            \\ \hline
 \multicolumn{1}{|c|}{\textit{Routing Flexibility}} & \textit{Source Routing}                                                        & \textit{Programmability}                                       & \textit{Others}                                                            & \multicolumn{1}{c|}{\textit{SR steering policy}}      & \textit{SL length}                                                     & \multicolumn{1}{c|}{\textit{New Functions}}   \\ \hline
-\begin{tabular}[c]{@{}c@{}}\cite{scmon},\cite{polverini2018routing},\cite{cianfrani2018heuristic},\cite{novelsdn}\\ \cite{energyefficient},\cite{ghuman2017per},\cite{ontraffic},\cite{defo1}\\ \cite{gay2017expect},\cite{moreno2017traffic},\cite{hou2019optimization}\end{tabular}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{interoperable},\cite{scmon},\cite{li2018bandwidth}\\ \cite{anefficient},\cite{novelsdn},\cite{ascalableand}\\ \cite{trafficpmsr},\cite{optimizedte},\cite{roomi2018semi}\\ \cite{defo1},\cite{gay2017expect},\cite{incrementaldeploy}\\ \cite{pereira2017optimizing},\cite{barakabitzenovel},\cite{pang2017sdn}\\ \cite{dugeon2017demonstration},\cite{segmentfor},\cite{firstdemonstration}\\ \cite{sdnandpce},\cite{paolucci2018network},\cite{paolucci2017service}\\ \cite{castoldi2017segment},\cite{springopen},\cite{fressancourt2015sdn}\\ \cite{li2017segment},\cite{lebrun2018software},\cite{duchene2018exploring}\\ \cite{demonstrationofsr},\cite{experimentalmulti},\cite{evolve}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{id-udp-pm},\cite{xhonneux2018flexible},\cite{srv62},\cite{implementationof}\\ \cite{duchene2018srv6pipes},\cite{abdelsalam2018sera},\cite{srlb},\cite{desmouceauxcontent}\\
-\cite{desmouceauxzero},\cite{mayer2019efficient}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{BSID:}\cite{timfa},\cite{foerster2018local},\cite{lebrun2018software},\cite{duchene2018exploring},\cite{experimentalmulti}\\ \textbf{ECMP:}\cite{optimizedte},\cite{moreno2017traffic},\cite{pereira2017optimizing}\\ \textbf{TLV:}\cite{id-udp-pm},\cite{timfa},\cite{xhonneux2018flexible},\cite{sdnandpce}\\ \textbf{Adj-SID:}\cite{incrementaldeploy},\cite{efficientlabel},\cite{labelencoding},\cite{pmsr},\cite{translating}\\ \textbf{Spray:}\cite{trafficduplication},\cite{aubry2018robustly}\\ \textbf{Traffic counters:}\cite{polveriniNoF2018}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\cite{ascalableand},\cite{incrementaldeploy},\cite{gay2017expect}\\ \cite{liaoruo2018optimizing},\cite{guedrez2017new}\end{tabular} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{anefficient},\cite{trafficpmsr}\\ \cite{incrementaldeploy},\cite{moreno2017traffic}\\ \cite{dugeon2017demonstration},\cite{hou2019optimization}\\ \cite{experimentaldemonstration},\cite{efficientlabel}\\ \cite{pathencoding},\cite{labelencoding}\\ \cite{pmsr},\cite{translating}\\ \cite{liaoruo2018optimizing},\cite{guedrez2017new}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\cite{id-udp-pm},\cite{segmentfor}\\ \cite{srdynamicrestoration},\cite{reliablesr}\\ \cite{pmsr},\cite{guedrez2017new}\\ \cite{abdelsalam2018sera},\cite{desmouceauxzero}\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}c@{}}\cite{scmon},\cite{polverini2018routing},\cite{cianfrani2018heuristic},\cite{novelsdn}\\ \cite{energyefficient},\cite{ghuman2017per},\cite{ontraffic},\cite{defo1}\\ \cite{gay2017expect},\cite{moreno2017traffic},\cite{hou2019optimization}\end{tabular}  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{interoperable},\cite{scmon},\cite{li2018bandwidth}\\ \cite{anefficient},\cite{novelsdn},\cite{ascalableand}\\ \cite{trafficpmsr},\cite{optimizedte},\cite{roomi2018semi}\\ \cite{defo1},\cite{gay2017expect},\cite{incrementaldeploy}\\ \cite{pereira2017optimizing},\cite{barakabitze2018novel},\cite{pang2017sdn}\\ \cite{dugeon2017demonstration},\cite{segmentfor},\cite{firstdemonstration}\\ \cite{sdnandpce},\cite{paolucci2018network},\cite{paolucci2017service}\\ \cite{castoldi2017segment},\cite{springopen},\cite{fressancourt2015sdn}\\ \cite{li2017segment},\cite{lebrun2018software},\cite{duchene2018exploring}\\ \cite{demonstrationofsr},\cite{experimentalmulti},\cite{evolve}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{xhonneux2018leveraging},\cite{xhonneux2018flexible},\cite{srv62},\cite{implementationof}\\ \cite{duchene2018srv6pipes},\cite{abdelsalam2018sera},\cite{srlb},\cite{desmouceauxcontent}\\
+\cite{desmouceauxzero},\cite{mayer2019efficient}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{BSID:}\cite{timfa},\cite{foerster2018local},\cite{lebrun2018software},\cite{duchene2018exploring},\cite{experimentalmulti}\\ \textbf{ECMP:}\cite{optimizedte},\cite{moreno2017traffic},\cite{pereira2017optimizing}\\ \textbf{TLV:}\cite{xhonneux2018leveraging},\cite{timfa},\cite{xhonneux2018flexible},\cite{sdnandpce}\\ \textbf{Adj-SID:}\cite{incrementaldeploy},\cite{efficientlabel},\cite{labelencoding},\cite{pmsr},\cite{translating}\\ \textbf{Spray:}\cite{trafficduplication},\cite{aubry2018robustly}\\ \textbf{Traffic counters:}\cite{polveriniNoF2018}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\cite{ascalableand},\cite{incrementaldeploy},\cite{gay2017expect}\\ \cite{liaoruo2018optimizing},\cite{guedrez2017new}\end{tabular} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\cite{anefficient},\cite{trafficpmsr}\\ \cite{incrementaldeploy},\cite{moreno2017traffic}\\ \cite{dugeon2017demonstration},\cite{hou2019optimization}\\ \cite{experimentaldemonstration},\cite{efficientlabel}\\ \cite{pathencoding},\cite{labelencoding}\\ \cite{pmsr},\cite{translating}\\ \cite{liaoruo2018optimizing},\cite{guedrez2017new}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\cite{xhonneux2018leveraging},\cite{segmentfor}\\ \cite{srdynamicrestoration},\cite{reliablesr}\\ \cite{pmsr},\cite{guedrez2017new}\\ \cite{abdelsalam2018sera},\cite{desmouceauxzero}\end{tabular} \\ \hline
 \end{tabular}
 \end{table*}
 
@@ -107,7 +107,7 @@ In the next subsections we briefly describe all the research works, considering 
 \subsection{Monitoring}
 \label{sec:mon}
 
-Seven research works proposing monitoring solutions able to exploit SR have been defined, as shown in Table \ref{tab:monitoring}. These works have been classified on the basis of their main aim:
+\MonitoringPapers research works proposing monitoring solutions able to exploit SR have been defined, as shown in Table \ref{tab:monitoring}. These works have been classified on the basis of their main aim:
 \begin{itemize}
     \item \emph{delay measurements}, aiming at obtaining the delay for links and routers exploiting the possibility of modifying the SL at source nodes, i.e. source routing SR feature;
     \item \emph{health checking of network devices}, aiming at monitoring the network state exploiting the capability of SR in defining ad-hoc routes, i.e. routing flexibility feature.
@@ -122,10 +122,10 @@ Seven research works proposing monitoring solutions able to exploit SR have been
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Objective}                                                                         & \textbf{References} \\ \hline
-\textit{\begin{tabular}[c]{@{}c@{}}Delay measurements\end{tabular}} & \cite{interoperable},\cite{id-udp-pm} \\ \hline
+\textit{\begin{tabular}[c]{@{}c@{}}Delay measurements\end{tabular}} & \cite{interoperable},\cite{xhonneux2018leveraging} \\ \hline
 \textit{\begin{tabular}[c]{@{}c@{}}Health checking \\ of network devices\end{tabular}}    & \cite{scmon},\cite{li2018bandwidth} \\ \hline
 \textit{Traffic measurements}                                                              & \cite{polverini2018routing},\cite{cianfrani2018heuristic},\cite{polveriniNoF2018} \\ \hline
-\textit{Traceroute}                                                                        & \cite{id-udp-pm} \\ \hline
+\textit{Traceroute}                                                                        & \cite{xhonneux2018leveraging} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -167,7 +167,7 @@ The second application realizes a link aggregation group using SRv6. In particul
 \subsection{Traffic Engineering}
 \label{sec:te}
 Due to its appealing features in terms of routing flexibility, SR is widely used to face Traffic Engineering related problems.
-During our investigation, we have found nineteen papers exploiting SR to provide advanced TE solutions.
+During our investigation, we have found \tePapers papers exploiting SR to provide advanced TE solutions.
 The TE research works have all the classical structure of an optimization problem: i) an objective function must be minimized/maximized, ii) taking into account a set of parameters, and iii) considering a specific network scenario.
 Three different TE objectives have been covered by the literature, i.e., the minimization of the network energy consumption, the optimization of the congestion and the minimization of the number of rejected requests.
 The high routing flexibility allowed by SR might cause the presence of complex and long network paths.
@@ -185,11 +185,11 @@ It is interesting to notice that most of the works consider the congestion minim
 \begin{tabular}{|c|l|c|}
 \hline
 \multirow{3}{*}{\textbf{Objective}}                                                    & \textit{\begin{tabular}[c]{@{}l@{}}Energy\\ Consumption\end{tabular}}               & \cite{energyefficient},\cite{ghuman2017per} \\ \cline{2-3} 
-                                                                                       & \textit{Link Bandwidth}                                                             & \begin{tabular}[c]{@{}c@{}}\cite{anefficient}, \cite{novelsdn},\cite{ascalableand},\cite{trafficpmsr},\cite{ontraffic} \\ \cite{optimizedte},\cite{roomi2018semi},\cite{defo1},\cite{gay2017expect},\cite{incrementaldeploy}\\ \cite{moreno2017traffic},\cite{pereira2017optimizing},\cite{barakabitzenovel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization}\end{tabular} \\ \cline{2-3} 
+                                                                                       & \textit{Link Bandwidth}                                                             & \begin{tabular}[c]{@{}c@{}}\cite{anefficient}, \cite{novelsdn},\cite{ascalableand},\cite{trafficpmsr},\cite{ontraffic} \\ \cite{optimizedte},\cite{roomi2018semi},\cite{defo1},\cite{gay2017expect},\cite{incrementaldeploy}\\ \cite{moreno2017traffic},\cite{pereira2017optimizing},\cite{barakabitze2018novel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization}\end{tabular} \\ \cline{2-3} 
                                                                                        & \textit{Rejected Requests}                                                          & \cite{anefficient},\cite{defo1}                                                   \\ \hline
 \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Takes into\\ account\end{tabular}}} & \textit{Delay}                                                                      & \cite{novelsdn},\cite{defo1},\cite{dugeon2017demonstration},\cite{hou2019optimization} \\ \cline{2-3} 
-                                                                                       & \textit{\begin{tabular}[c]{@{}l@{}}SR impact\\ (overhead, flow state)\end{tabular}} & \begin{tabular}[c]{@{}c@{}} \cite{anefficient},\cite{ascalableand},\cite{incrementaldeploy},\cite{moreno2017traffic},\cite{pereira2017optimizing} \\ \cite{barakabitzenovel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization}\end{tabular} \\ \hline
-\multirow{2}{*}{\textbf{Scenario}}                                                     & \textit{Full SR}                                                                    & \begin{tabular}[c]{@{}c@{}}  \cite{anefficient},\cite{ascalableand},\cite{energyefficient},\cite{ghuman2017per},\cite{trafficpmsr}\\  \cite{ontraffic},\cite{optimizedte},\cite{roomi2018semi},\cite{defo1},\cite{defo2} \\  \cite{moreno2017traffic},\cite{barakabitzenovel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization} \end{tabular} \\ \cline{2-3} 
+                                                                                       & \textit{\begin{tabular}[c]{@{}l@{}}SR impact\\ (overhead, flow state)\end{tabular}} & \begin{tabular}[c]{@{}c@{}} \cite{anefficient},\cite{ascalableand},\cite{incrementaldeploy},\cite{moreno2017traffic},\cite{pereira2017optimizing} \\ \cite{barakabitze2018novel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization}\end{tabular} \\ \hline
+\multirow{2}{*}{\textbf{Scenario}}                                                     & \textit{Full SR}                                                                    & \begin{tabular}[c]{@{}c@{}}  \cite{anefficient},\cite{ascalableand},\cite{energyefficient},\cite{ghuman2017per},\cite{trafficpmsr}\\  \cite{ontraffic},\cite{optimizedte},\cite{roomi2018semi},\cite{defo1},\cite{defo2} \\  \cite{moreno2017traffic},\cite{barakabitze2018novel},\cite{pang2017sdn},\cite{dugeon2017demonstration},\cite{hou2019optimization} \end{tabular} \\ \cline{2-3} 
                                                                                        & \textit{Partially deployed SR}                                                      & \cite{novelsdn},\cite{incrementaldeploy}                                                   \\ \hline
 \end{tabular}
 \end{table}
@@ -291,7 +291,7 @@ The proposed formulation is able to capture both S-SRD and M-SRD models.
 
 \cite{pereira2017optimizing} proposes a TE solution for paths computation that, leveraging at most three labels, is able to optimize link resources and avoid congestion in the network. Firstly, the SDN controller address the problem of properly compute the weights of the IGP Link State protocol using Evolutionary algorithms. Then, the traffic distribution is computed through the Distributed Exponentially-weighted Flow SpliTting (DEFT) or the Penalizing Exponential Flow-spliTting (PEFT) which assign the flows to a next-hop with a probability that decreases exponentially with the extra length of the path (with the respect of the shortest path). SR is used to achieve detours and implement the traffic splitting. Performance evaluation shows that the TE solution delivers a lower congestion with the respect of OSPF/ECMP with optimized configurations and is able to use all available links. %Finally, with a second experiment authors show that through a proper parameters tweaking the algorithm is robust also to traffic demand variations.
 
-The flexibility of SR in path selection, together with the higher throughput provided by the Multi Path TCP (MPTCP), are exploited in \cite{barakabitzenovel} in order to optimize the throughput for large flows and cope with the explosive growth of multimedia traffic, in 5G networks.
+The flexibility of SR in path selection, together with the higher throughput provided by the Multi Path TCP (MPTCP), are exploited in \cite{barakabitze2018novel} in order to optimize the throughput for large flows and cope with the explosive growth of multimedia traffic, in 5G networks.
 The propose architecture uses a centralized control plane, with a central controller in charge of managing the Quality of Experience of each MCTCP connection.
 In particular, the central controller finds multiple paths for each connection, checks the bandwidth requirements and install specific flow rules at the ingress nodes of the considered 5G network.
 When a new MPTCP connection is established, the controller must find a path for each of the subflows belonging to this connection.
@@ -317,7 +317,7 @@ According to the authors, their algorithms not only reduce the cost of the paths
 \subsection{Failure Recovery}
 \label{sec:fail}
 
-Nine research works dealing with SR for Failure Recovery and Network Resiliency have been published in the last years. 
+\FailurePapers research works dealing with SR for Failure Recovery and Network Resiliency have been published in the last years. 
 The proposed solution can be classified considering the type of failure they are able to recover from:, i.e.link or node failures.
 Table \ref{tab:failure-recovery} shows the classification of the covered papers.
 
@@ -361,7 +361,7 @@ Specifically, the main contributions are: i) introduction of a polynomial-time f
 \subsection{Centrally Controlled Architectures}
 \label{sec:central_control}
 
-The definition of Centrally Controlled Architectures exploiting the SR architecture has been widely investigated in literature, resulting in fifteen different works.
+The definition of Centrally Controlled Architectures exploiting the SR architecture has been widely investigated in literature, resulting in \ccaPapers different works.
 The solution proposed has been classified on the basis of three different aspects, as reported in Table \ref{tab:central-control}. Considering the SR dataplane, an high number of works makes use of the SR-MPLS dataplane while only three works are based on SRv6. Moreover, few works do no explicitly consider a specific SR implementation but simply exploit the SR possibility of inserting the flow state in the packet header.
 A further aspect used to classify the research papers is the protocol used for the southbound communication between the network devices and the central controller.
 The considered protocols are Openflow, PCEP or others.
@@ -448,7 +448,7 @@ Instead, in a multi-domain scenario several SDN controllers are deployed and exc
 \label{sec:path}
 
 The translation of a network path, resulting from a specific TE objective, into a sequence of SIDs, i.e. a Segment List, is a key operation for the deployment of SR in a real network. This operation is usually referred to as Path Encoding.
-Seven different papers have been defined for the definition of a proper a solution to the path encoding problem.
+\PathencPapers different papers have been defined for the definition of a proper a solution to the path encoding problem.
 The different algorithms differs depends on the nature of the network path, i.e. the path to be encoded.
 Specifically, the input path might be computed on top of a network with uniform link weight or arbitrary ones.
 Moreover, it might include ECMP or not.
@@ -522,7 +522,7 @@ In this case, the main idea is to install in the same node as many TSIDs as poss
 \subsection{Network Programming}
 \label{sec:netprog}
 
-Despite the fact that Network Programming is the most attractive and innovative feature of SR, we have found only eight papers related to this topic.
+Despite the fact that Network Programming is the most attractive and innovative feature of SR, we have found only \networkProgPapers papers related to this topic.
 As shown in table \ref{tab:network-programming}, these works can be classified in Service Function Chaining related ones, or operational function.
 The latter aim at implementing operational functions, such as a load balancer and a zero-loss VM migration tool, by exploiting the network programming feature of SR.
 
