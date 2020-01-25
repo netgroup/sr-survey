@@ -1,6 +1,19 @@
 \section{Future research directions}
 \label{sec:future}
 
-\begin{itemize}
-    \item Describe future research directions
-\end{itemize}
+\revnew{Most of the SR works we have reviewed have focused on the definition of novel solutions for classical network problems (such as Monitoring, Traffic Engineering and Failure Recovery) or on optimization of specific SR procedures (such as Path Encoding). In general, these works showed that SR can provide significant enhancements with respect to other solutions and we believe that there is still room and interest for extending the achieved results in these areas. In addition, we try to identify and discuss a set of research directions for Segment Routing that are definitely worth exploring in the near future: i) Service Function Chaining support, ii) SRv6 end-host implementation aspects, iii) Cloud Orchestration, iv) Integration with Applications, v) 5G, vi.) IoT. All these research areas are based on SRv6, i.e. on Segment Routing over the IPv6 data plane, as we believe that the future evolution of Segment Routing will be based on SRv6.}
+%extensions to SRv6 (microSID)
+%monitoring and OAM for SRv6
+\revnew{\subsection{Service Function Chaining support}
+The Programmability feature of SRv6 represents an enabling factor for the implementation of Network Function Virtualization (NFV) and Service Function Chaining (SFC) in provider networks. In this regard, new abstraction models for the management of Network Functions by means of dedicated SRv6 control procedures could be studied.
+\subsection{SRv6 end-host implementation aspects}
+Another interesting topic is related to the implementation of SRv6 in end-hosts. One aspect is related to moving SRv6 functions in end-hosts from the software closer to the hardware with SmartNICs. Programmable NICs allow to implement network traffic processing on the NIC instead of using the CPU of the end-nodes/devices. Another aspect is related to exploiting the recent advances in Linux kernel networking for fast packet processing, namely eBPF \cite{lwn-ebpf} and XDP \cite{xdp-wikipedia} for implementing SRv6 functions. 
+\subsection{Cloud Orchestration}
+The third research opportunity regards integration of the SRv6 technology into Cloud orchestrators like OpenStack \cite{openstack} and Kubernetes \cite{kubernetes}. Considering Data Center networking scenarios, it will be possible to replace actual data plane mechanism based on legacy tunneling mechanisms like VXLAN with SRv6, with a drastic simplification of the network stack: the needed information will be integrated into SRv6 SIDs and/or in the TLV field, with no need of dedicated headers for tunneling.
+\subsection{Integration with Applications}
+Allowing direct interaction of applications with SRv6 features could enable innovative services and improve the efficiency of existing ones. Applications could use SRv6 SIDs to express their service requirements and to interact with network features, dynamically participating in the definition/composition of network services. To achieve this interaction, first the APIs of the operating system (e.g. Linux) needs to be extended, then SRv6 aware applications needs to be developed. 
+\subsection{5G}
+SRv6 is being considered for the data plane of future releases of 5G networks thanks to its stateless traffic steering and programmability features. On one hand, SRv6 could support 5G features like network slicing, on the other hand, it will be important to evaluate the performance of SRv6 based data plane, to verify that strict 5G constraints on latency are met.
+\subsection{Internet of Things}
+Considering the problem space of Internet of Things, which includes scalability aspects, routing aspects, interactions between networking and application layers, the application of the SRv6 architecture seems very promising. 
+}
