@@ -35,11 +35,14 @@
 \usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{booktabs}
-\usepackage{subcaption} %******************* This package has conflict with sufig and subfigure
+\usepackage{support-caption} %to get rid of "Package caption Warning:...", Stefano has added this (and the file support-caption.sty) following the suggestion in https://tex.stackexchange.com/questions/341680/package-caption-warning-unsupported-document-class
+\usepackage{subcaption} %******************* This package has conflict with subfig and subfigure
 %\usepackage{subfigure}
 %\usepackage{subfig}
 \usepackage{xspace}
 \captionsetup[table]{labelsep=space,justification=centering,font=sc}
+
+\usepackage[normalem]{ulem} %this is for strikethrough (\sout{})
 
 \usepackage[T1]{fontenc}
 
@@ -53,6 +56,10 @@
 \algnewcommand\INPUT{\item[\algorithmicinput]}
 \algnewcommand\algorithmicoutput{\textbf{OUTPUT:}}
 \algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+
+%DOUBLE QUOTATION COMMAND
+\newcommand{\dq}[1]{``#1''}
+
 %\usepackage[table]{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \newcommand{\note}[1]{\textcolor{blue}{\textbf{[#1]}}}
@@ -74,25 +81,25 @@
 %numbers for referenced scientific papers and standardization drafts
 
 %%%% SCIENTIFIC PAPERS
-\newcommand{\coveredCategories}{seven\xspace}
-\newcommand{\CoveredCategories}{Seven\xspace}
-\newcommand{\numCoveredCategories}{7\xspace}
+\newcommand{\coveredCategories}{eight\xspace}
+\newcommand{\CoveredCategories}{Eight\xspace}
+\newcommand{\numCoveredCategories}{8\xspace}
 
-\newcommand{\monitoringPapers}{seven\xspace}
-\newcommand{\MonitoringPapers}{Seven\xspace}
-\newcommand{\numMonitoringPapers}{7\xspace}
+\newcommand{\monitoringPapers}{eight\xspace}
+\newcommand{\MonitoringPapers}{Eight\xspace}
+\newcommand{\numMonitoringPapers}{8\xspace}
 
-\newcommand{\tePapers}{nineteen\xspace}
-\newcommand{\TePapers}{Nineteen\xspace}
-\newcommand{\numTePapers}{19\xspace}
+\newcommand{\tePapers}{twenty two\xspace}
+\newcommand{\TePapers}{Twenty Two\xspace}
+\newcommand{\numTePapers}{22\xspace}
 
 \newcommand{\failurePapers}{nine\xspace}
 \newcommand{\FailurePapers}{Nine\xspace}
 \newcommand{\numFailurePapers}{9\xspace}
 
-\newcommand{\ccaPapers}{fourteen\xspace}
-\newcommand{\CcaPapers}{Fourteen\xspace}
-\newcommand{\numCcaPapers}{14\xspace}
+\newcommand{\ccaPapers}{sixteen\xspace}
+\newcommand{\CcaPapers}{Sixteen\xspace}
+\newcommand{\numCcaPapers}{16\xspace}
 
 \newcommand{\pathencPapers}{eight\xspace}
 \newcommand{\PathencPapers}{Eight\xspace}
@@ -102,24 +109,28 @@
 \newcommand{\NetworkProgPapers}{Eight\xspace}
 \newcommand{\numNetworkProgPapers}{8\xspace}
 
-\newcommand{\miscPapers}{six\xspace}
-\newcommand{\MiscPapers}{Six\xspace}
-\newcommand{\numMiscPapers}{6\xspace}
+\newcommand{\perfevalPapers}{four\xspace}
+\newcommand{\PerfevalPapers}{Four\xspace}
+\newcommand{\numPerfevalPapers}{4\xspace}
 
-\newcommand{\totalPapers}{seventy five\xspace}
-\newcommand{\TotalPapers}{Seventy Five\xspace}
-\newcommand{\numTotalPapers}{75\xspace}
+\newcommand{\miscPapers}{ten\xspace}
+\newcommand{\MiscPapers}{ten\xspace}
+\newcommand{\numMiscPapers}{10\xspace}
+
+\newcommand{\totalPapers}{eighty eight\xspace}
+\newcommand{\TotalPapers}{Eighty eight\xspace}
+\newcommand{\numTotalPapers}{88\xspace}
 
 %%%% STANDARDIZATION DRAFTS
 
 % table and these numbers do not coincide (replicated entries and rfc that are not part of SR)
-\newcommand{\rfcStandardization}{twelve\xspace}
-\newcommand{\RFCStandardization}{Twelve\xspace}
-\newcommand{\numRFCStandardization}{12\xspace}
+\newcommand{\rfcStandardization}{thirteen\xspace}
+\newcommand{\RFCStandardization}{Thirteen\xspace}
+\newcommand{\numRFCStandardization}{13\xspace}
 
-\newcommand{\draftStandardization}{fifty two\xspace}
-\newcommand{\DraftStandardization}{Fifty Two\xspace}
-\newcommand{\numDrafttandardization}{52\xspace}
+\newcommand{\draftStandardization}{fifty one\xspace}
+\newcommand{\DraftStandardization}{Fifty One\xspace}
+\newcommand{\numDrafttandardization}{51\xspace}
 
 \newif\ifextended
 \newif\ifshortver
@@ -144,6 +155,31 @@
 \newcommand{\extended}[1]{\ifextended \ifshortver \textcolor{purple}{#1} \else \textcolor{black}{#1} \fi  \fi}
 \newcommand{\shortver}[1]{\ifshortver \ifextended \textcolor{blue}{#1} \else \textcolor{black}{#1} \fi \fi}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%SHOW REVISIONS
+
+% use \revnew{Added text} and \revdel{Removed text}
+% Added text will be shown in bold if revision is on
+% and as normal text if revision is off
+% Removed text will be shown strikethrough if revision is on
+% and it will not be shown if revision is off
+
+\newif\ifrevision
+
+%%% Show revnew in bold, show revdel as strikethrough
+%%%        \revisiontrue 
+
+%%% Show revnew as normal text, do not show revdel
+%%%        %\revisiontrue 
+
+%\revisiontrue
+
+\newcommand{\revnew}[1]{\ifrevision \textbf{#1} \else #1 \fi}
+\newcommand{\revdel}[1]{\ifrevision \sout{#1} \else \fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\optional}[1]{\ignorespaces}
 % correct bad hyphenation here
 \hyphenation{net-works fa-ci-li-ta-tes fa-ci-li-ta-te mo-ni-to-ring par-ti-cu-lar pe-ri-o-di-cal-ly mi-ni-mi-zing va-ria-tions de-li-ve-red per-ri-o-di-cal-ly}
@@ -163,7 +199,7 @@ Ahmed Abdelsalam, Clarence Filsfils, Pablo Camarillo, Francois Clad
 \IEEEcompsocthanksitem A. Abdelsalam, C. Filsfils, P. Camarillo and F. Clad are with Cisco Systems, E-mail: \{ahabdels, cfilsfil, pcamaril, fclad\}@cisco.com
 }
 \vspace{2ex}
-\textbf{\\Submitted paper under review - v04 - June 2019}
+\textbf{\\Submitted paper under 2\textsuperscript{nd} round of review - v04 - January 2020}
 \vspace{-3ex}
 }
 
@@ -172,11 +208,10 @@ Ahmed Abdelsalam, Clarence Filsfils, Pablo Camarillo, Francois Clad
 
 \begin{comment} Telco Operators were suffering from lack of flexibility and scalability to realize an increasing variety of cloud based services, meet the demand for more bandwidth and keep the costs low and infrastructures agile. Since 2012 Segment Routing (SR) architecture, also known as Source Packet Routing In Networking (SPRING) in the Internet Engineering Task Force, has been proposed as solution aimed at filling this gap. SR founds its architecture on the source routing and tunneling paradigms, becoming a promising solution to support services like Traffic Engineering and Virtual Private Networks in IP backbones and datacenters. SR architecture has also interesting scalability properties, as it reduces the amount of state information that needs to be configured in the core nodes since devices steer packets over paths using a sequence of instructions (segments) placed in the packet header at the ingress of the network. Two instantations exist of the Segment Routing architecture: it can be implemented using either the MPLS or the IPv6 data plane. Recently, the IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general network programming approach by the Internet draft SRv6 Network Programming making SRv6 architecture appealing to new use cases like Service Function chaining and Network Function Virtualization. \end{comment}
 
-
 \IEEEtitleabstractindextext{
 \begin{abstract} 
 Fixed and mobile telecom operators, enterprise network operators and cloud providers strive to face the challenging demands coming from the evolution of IP networks (e.g. huge bandwidth requirements, integration of billions of devices and millions of services in the cloud). Proposed in the early 2010's, the Segment Routing (SR) architecture helps facing these challenging demands and it is being adopted and deployed. The SR architecture is based on the concept of source routing and has interesting scalability properties as it dramatically reduces the amount of state information to be configured in the core nodes to support complex services. The SR architecture has been first implemented with the MPLS dataplane and then, quite recently, with the IPv6 dataplane (SRv6). The IPv6 SR architecture (SRv6) has been extended from the simple steering of packets across nodes to a general \textit{network programming} approach, making it very suitable for use cases like Service Function Chaining and Network Function Virtualization. 
-In this paper we present a tutorial and a comprehensive survey on the SR technology, analyzing research activities, standardization efforts and implementation results. We start with an introduction on the motivations for Segment Routing and an overview of its evolution and standardization. Then, we provide a tutorial on the Segment Routing technology, with focus on the novel SRv6 solution. Next, we thoroughly analyze the research activities according to a taxonomy. We have identified \numCoveredCategories main categories during our analysis of the current state of the art: Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Network Programming and Miscellaneous. We also discuss the standardization efforts, providing details on the most important documents and listing other ongoing activities along with pointers to them. Last but not least, we present the up-to-date status of SR implementation and provide references to several open source projects.
+In this paper we present a tutorial and a comprehensive survey on the SR technology, analyzing standardization efforts, research activities and implementation results. We start with an introduction on the motivations for Segment Routing and an overview of its evolution and standardization. Then, we provide a tutorial on the Segment Routing technology, with focus on the novel SRv6 solution. We discuss the standardization efforts, providing details on the most important documents and mentioning other ongoing activities. Then, we thoroughly analyze the research activities according to a taxonomy. We have identified \numCoveredCategories main categories during our analysis of the current state of the art: Monitoring, Traffic Engineering, Failure Recovery, Centrally Controlled Architectures, Path Encoding, Network Programming, Performance Evaluation and Miscellaneous. We report the current status of SR deployments in production networks and of SR implementations (including several open source projects). Finally, we identify a set of future research directions related to for the Segment Routing.
 \end{abstract}
 
 
@@ -190,19 +225,20 @@ Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic 
 
 \input{sec/1-introduction}
 \input{sec/2-architecture}
-\input{sec/3-research}
-\input{sec/4-standardization}
+\input{sec/3-standardization}
+\input{sec/4-research}
 \input{sec/5-tools}
 
 \begin{comment}
 \input{sec/6-deployments}
-\input{sec/7-future}
 \end{comment}
+\input{sec/7-future}
+
 
 \input{sec/8-conclusions.tex}
 
-\section*{Acknowledgment}
-    This work has received funding from the Cisco University Research Program Fund.
+\section*{Acknowledgments}
+This work has received funding from the Cisco University Research Program Fund and from the EU H2020 5G-EVE project.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
@@ -211,7 +247,7 @@ Segment Routing, MPLS, IPv6, SR-MPLS, SRv6, Source Routing, Monitoring, Traffic 
 \extended{
 \vspace{-4em}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/bio/ventre.jpg}}]{Pier Luigi Ventre}
-received his Master's degree in Computer Engineering from University of Rome Tor Vergata in 2014, with a thesis on Information-Centric Networking and Software Defined Networking. From 2013 to 2015, he was one of the beneficiary of the scholarship ``Orio Carlini'' granted by the Italian NREN GARR. His main research interests focus on Computer Networks, Software Defined Networking, Virtualization and Information-Centric Networking. He worked in several EU research projects. Currently, He is a PhD student in Electronic Engineering at University of Rome Tor Vergata.
+is a Member of Technical Staff at Open Networking Foundation (ONF), where he works on Trellis - the leading open-source leaf-spine fabric. Before joining ONF, Pier Luigi Ventre worked at CNIT as researcher and post-doctoral researcher in several projects funded by the EU. He received his PhD in Electronics Engineering in 2018 from University of Rome "Tor Vergata". From 2013 to 2015, he was one of the beneficiary of the scholarship "Orio Carlini" granted by the Italian NREN GARR. His main interests focus on Software Defined Networking, Network Function Virtualization, Virtualization and Segment Routing.
 \end{IEEEbiography}
 \begin{IEEEbiography}[{\includegraphics[width=0.9in,height=1.10in,clip,keepaspectratio]{fig/bio/salsano.png}}]{Stefano Salsano}
 (M'98-SM'13) received his PhD from University of Rome ``La Sapienza'' in 1998. He is Associate Professor at the University of Rome Tor Vergata. Since July 2018 he is the Coordinator of the Bachelor's Degree ``Ingegneria di Internet'' and of the Master's Degree ``ICT and Internet Engineering'' He participated in 16 research projects funded by the EU, being project coordinator in one of them and technical coordinator in two. He has been PI in several research and technology transfer contracts funded by industries. 
